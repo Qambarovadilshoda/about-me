@@ -1,41 +1,73 @@
+/* Body va asosiy layout */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
+    background-color: #1e1e1e;
     padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 1000px; /* Maksimal kenglik */
+    width: 90%; /* Responsivlik uchun foiz */
 }
 
-.left-panel, .right-panel {
-    background-color: #181818;
-    color: #fff;
+/* Chap panel */
+.left-panel {
+    flex: 1; /* Egallaydigan kenglik */
+    max-width: 40%; /* Maksimal kenglik */
+    background-color: #252525;
     padding: 20px;
     border-radius: 10px;
-}
-
-.left-panel {
-    flex: 1;
     margin-right: 20px;
-    text-align: center;
-}
-
-.right-panel {
-    flex: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    border: 2px solid #33cc33;
+    display: block;
+    margin: 0 auto 20px;
+    object-fit: cover;
+}
+
+.name {
+    color: #33cc33;
+    text-align: center;
+    font-size: 1.5rem;
     margin-bottom: 15px;
 }
 
 .contact-info {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .contact-info li {
     margin-bottom: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contact-info a {
@@ -47,14 +79,44 @@
     text-decoration: underline;
 }
 
-.name {
-    color: #33cc33;
+/* O'ng panel */
+.right-panel {
+    flex: 2; /* Kenglik */
+    max-width: 50%; /* Maksimal kenglik */
 }
 
 .card {
-    background-color: #222;
-    padding: 15px;
-    border: 1px solid #33cc33;
+    background-color: #333;
+    padding: 20px;
     margin-bottom: 15px;
     border-radius: 10px;
+    border-left: 4px solid #33cc33;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #33cc33;
+}
+
+.card p {
+    margin: 10px 0 0;
+}
+
+/* Responsivlik */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel,
+    .right-panel {
+        max-width: 100%;
+        margin: 0 0 20px;
+    }
+
+    .right-panel {
+        margin-bottom: 0;
+    }
 }
